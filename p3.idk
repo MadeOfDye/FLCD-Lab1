@@ -1,0 +1,18 @@
+weUSE "input.lib", "output.lib";
+
+FN minOfMany(sequence..., n) MAKE
+	min: 2000000000;
+
+	ITERATE start: seq.1, seq.n, 1 DO ;; you don't need start if you do not need the value of the current iteration
+		IF sequence.start < min
+			min <= sequence.start;
+		FI
+	OD
+	ret min;
+EKAM
+
+MAIN()
+	sequence...: _CONSOLE_INPUT_();
+	n: _CONSOLE_INPUT_();
+	_CONSOLE_OUTPUT_() <= minOfMany() <= sequence, n;
+NAIM

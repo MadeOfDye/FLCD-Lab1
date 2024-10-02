@@ -1,0 +1,25 @@
+weUSE "input.lib", "output.lib";
+
+FN maxOfThree(a, b, c) MAKE
+	IF a >= b AND a >= c DO
+		ret a;
+	OD
+
+	IF b >= a AND b >= c DO
+		ret b;
+	OD
+
+	IF c >= a AND c >= b DO
+		ret c;
+	OD
+
+EKAM
+
+MAIN()
+	a: _CONSOLE_INPUT_();
+	b: _CONSOLE_INPUT_();
+	c: _CONSOLE_INPUT_();
+
+	_CONSOLE_OUTPUT_() <= maxOfThree()<= a, b, c;
+
+NAIM

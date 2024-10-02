@@ -1,0 +1,19 @@
+weUSE "input.lib", "output.lib";
+
+FN gcd(a, b) MAKE
+	WHILE b <> 0 DO
+		c: 0
+		c <= a
+		a <= b
+		b <= c % a
+	OD
+	ret a;
+EKAM
+
+;; initial declaration will be done with ":" and assignment of value with "<=". The operator for lesser or equal to is going to be "=<". Also this is a comment
+
+main()
+	a: _CONSOLE_INPUT_();
+	b: _CONSOLE_INPUT_();
+	_CONSOLE_OUTPUT_()<= gcd()<= a, b;
+naim
